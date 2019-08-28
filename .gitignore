@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/.vscode
+/Product/TradeRevUITest/bin
+/Product/TradeRevUITest/obj
+/Product/TradeRevUtilities/bin
+/Product/TradeRevUtilities/obj
+/Product/.vs
+/Product/.vscode
+/TestFrameworkWrapper/TestFrameworkWrapper/bin
+/TestFrameworkWrapper/TestFrameworkWrapper/obj
+/TestFrameworkWrapper/.vs
+/TestFrameworkWrapper/.vscode
+/TestFrameworkWrapper/packages
