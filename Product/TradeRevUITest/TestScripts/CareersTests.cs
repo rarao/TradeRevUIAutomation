@@ -47,7 +47,7 @@ namespace TradeRevUITest.TestScripts
             this.TRFuncUIUtilities.FilterJobs(map);
             this.TRFuncUIUtilities.RetrieveAvailablePositions(map);
 
-            Console.WriteLine("Available positions are : " + map.Get("AvailablePositions").ToString());
+            this.TestContext.WriteLine("Available positions are : " + map.Get("AvailablePositions").ToString());
         }
     }
 }
