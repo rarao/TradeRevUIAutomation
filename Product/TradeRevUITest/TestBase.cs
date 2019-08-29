@@ -28,7 +28,7 @@ namespace TradeRevUITest
         }
 
         [AssemblyInitialize()]
-        public static void BeforeSuite()
+        public static void BeforeSuite(TestContext testContext)
         {
 
         }

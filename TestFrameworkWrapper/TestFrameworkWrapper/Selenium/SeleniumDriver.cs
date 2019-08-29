@@ -83,6 +83,28 @@ namespace TestFrameworkWrapper.Selenium
                 throw ex;
             }
         }
+        public void SwitchToLatestTab()
+        {
+            try
+            {
+                string firstTabHandle = driver.CurrentWindowHandle;
+
+                IReadOnlyCollection<string> handles = driver.WindowHandles;
+                
+                for(int i=handles.Count-1;i>=0;i++)
+                {
+                    if (!handles.ElementAt(i).Equals(firstTabHandle))
+                    {
+                        driver.SwitchTo().Window(handles.ElementAt(i));
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public string GetTitle(bool newTab = false)
         {
             if (!newTab)

@@ -72,6 +72,11 @@ namespace TestFrameworkWrapper.Selenium
                 // Set wait and Timeout
                 this.SetWaitAndTimeout(implicitWait, timeOut, driver);
 
+                if (url != string.Empty)
+                {
+                    driver.Navigate().GoToUrl(url);
+                }
+
                 this.drivers.Add(tcName, driver);
             }
 
@@ -135,7 +140,7 @@ namespace TestFrameworkWrapper.Selenium
                 this.drivers[tcName].Quit();
                 this.drivers.Remove(tcName);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

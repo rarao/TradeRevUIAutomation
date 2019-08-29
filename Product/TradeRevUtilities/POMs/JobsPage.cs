@@ -60,7 +60,7 @@ namespace TradeRevUtilities.POMs
             foreach (var webelement in webElements)
             {
                 if (webelement.FindElement(By.ClassName("filter-button")).Text.ToLower().Equals(name.ToLower()))
-                    return new FilterBy(webelement.FindElement(By.XPath("..")));
+                    return new FilterBy(webelement);
             }
             return null;
         }
@@ -121,7 +121,10 @@ namespace TradeRevUtilities.POMs
             foreach (var item in list)
             {
                 if (item.Text.ToLower().Contains(value.ToLower()))
+                {
                     item.Click();
+                    break;
+                }
             }
         }
     }
@@ -143,7 +146,7 @@ namespace TradeRevUtilities.POMs
         {
             get
             {
-                return this.element.FindElement(By.ClassName("posting-name")).Text;
+                return this.element.FindElement(By.TagName("h5")).Text;
             }
         }
         public string ApplyBtn

@@ -10,7 +10,7 @@ namespace TestFrameworkWrapper
 {
     public static class TRCommonUtilities
     {
-        public static dynamic GetXElementFromXml(string path, string nodeName = "")
+        public static dynamic GetXElementFromXml(string path)
         {
             List<XElement> result = new List<XElement>();
             List<KeyValuePair<string, object>> attributesValues = new List<KeyValuePair<string, object>>();
@@ -28,18 +28,9 @@ namespace TestFrameworkWrapper
                             continue;
                         }
 
-                            if (!reader.Name.Equals(nodeName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                continue;
-                            }
+                        var element = (XElement)XNode.ReadFrom(reader);
 
-                            var element = (XElement)XNode.ReadFrom(reader);
-                            if (!element.HasAttributes)
-                            {
-                                continue;
-                            }
-
-                            result.Add(element);
+                        result.Add(element);
                     }
 
                     if (result.Count == 0)

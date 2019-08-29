@@ -33,7 +33,7 @@ namespace TradeRevUtilities.Utilities
 
                 TRAssert.IsTrue(this.careersPage.CallOutSection.GetAttribute("class").Contains("callout"), "Callout section is not present at the top");
                 TRAssert.IsNotNull(this.careersPage.VideoSection.FindElement(By.ClassName("video")), "Video section doesnot have a video");
-                TRAssert.IsNotNull(this.careersPage.CallOutSection.FindElement(By.ClassName("supsystic-slider")), "Slider not present in the slider section");
+                TRAssert.IsNotNull(this.careersPage.SliderSection.FindElement(By.ClassName("supsystic-slider")), "Slider not present in the slider section");
 
                 TRAssert.IsNotNull(this.careersPage.Sections[1].FindElement(By.ClassName("section-title")), "2nd Section is a TextSection but doesnot have a title");
                 TRAssert.IsNotNull(this.careersPage.Sections[3].FindElement(By.ClassName("section-title")), "4th Section is a TextSection but doesnot have a title");
@@ -51,7 +51,7 @@ namespace TradeRevUtilities.Utilities
             try
             {
                 this.careersPage.CanadianOpportunitiesBtn.Click();
-                this.careersPage.SwitchToNewTab();
+                this.careersPage.SwitchToLatestTab();
             }
             catch (Exception ex)
             {

@@ -43,7 +43,7 @@ namespace TradeRevUITest.TestScripts
             this.TRFuncUIUtilities.NavigateTo(TradeRevURL.jobsite);
             this.TRFuncUIUtilities.FilterJobs(map);
             this.TRFuncUIUtilities.VerifyFilter(map);
-            map.Put("JobFilter", "city!All#team!All#worktype#All");
+            map.Put("JobFilter", "Toronto, Ontario, Canada!All#Engineering!All#work type!All");
             this.TRFuncUIUtilities.FilterJobs(map);
             this.TRFuncUIUtilities.RetrieveAvailablePositions(map);
 
